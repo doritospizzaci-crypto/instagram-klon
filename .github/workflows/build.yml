@@ -29,6 +29,11 @@ jobs:
           cp /tmp/keep/firebase_options.dart lib/firebase_options.dart
           flutter pub add firebase_core firebase_auth cloud_firestore image_picker
 
+      - name: Sabit imza
+        run: |
+          mkdir -p ~/.android
+          cp debug.keystore ~/.android/debug.keystore
+
       - name: APK derle
         run: flutter build apk --release
 
