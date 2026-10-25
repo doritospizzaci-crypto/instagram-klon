@@ -23,11 +23,11 @@ jobs:
       - name: Proje dosyalarini olustur
         run: |
           mkdir -p /tmp/keep
-          cp main.dart firebase_options.dart /tmp/keep/
+          cp app.dart firebase_options.dart /tmp/keep/
           flutter create . --org com.example --project-name instagram_klon --platforms=android
-          cp /tmp/keep/main.dart lib/main.dart
+          cp /tmp/keep/app.dart lib/main.dart
           cp /tmp/keep/firebase_options.dart lib/firebase_options.dart
-          flutter pub add firebase_core firebase_auth cloud_firestore
+          flutter pub add firebase_core firebase_auth cloud_firestore image_picker
 
       - name: APK derle
         run: flutter build apk --release
